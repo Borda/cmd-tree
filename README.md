@@ -8,10 +8,8 @@ A command line tool for generating text-based representations of file hierarchie
 $ py-tree
 .
 |-- _config.yml
-|-- apply_license.sh
 |-- CONTRIBUTING.md
 |-- LICENSE
-|-- license_boilerplate
 |-- MANIFEST.in
 |-- README.md
 |-- setup.py
