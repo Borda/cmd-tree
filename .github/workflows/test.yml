@@ -25,6 +25,15 @@ jobs:
         run: pip install -e . -r tests/requirements.txt
       - name: Run tests
         run: pytest --cov=py_tree tests/ -v
+      - name: Generate coverage report
+        run: coverage xml
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        continue-on-error: true
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: true
+          flags: unittests
+          name: codecov-umbrella
+          token: ${{ secrets.CODECOV_TOKEN }}
 

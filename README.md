@@ -1,6 +1,7 @@
 # Py-Tree #
 
-[![Build Status](https://travis-ci.org/tdeh/py-tree.svg?branch=master)](https://travis-ci.org/tdeh/py-tree)
+[![CI](https://github.com/Borda/cmd-tree/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/Borda/cmd-tree/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/Borda/fs-tree/graph/badge.svg?token=HwzDNH77r4)](https://codecov.io/gh/Borda/fs-tree)
 
 A command line tool for generating text-based representations of file hierarchies.
 
@@ -8,25 +9,23 @@ A command line tool for generating text-based representations of file hierarchie
 $ py-tree
 .
 |-- _config.yml
-|-- CONTRIBUTING.md
 |-- LICENSE
 |-- MANIFEST.in
 |-- README.md
 |-- setup.py
-`-- py_tree
+|-- py_tree
+|   |-- __init__.py
+|   |-- __main__.py
+|   |-- command_line.py
+|   |-- directory_explorer.py
+|   |-- directory_tree.py
+|   `-- tree_printer.py
+`-- tests
     |-- __init__.py
-    |-- __main__.py
-    |-- command_line.py
-    |-- directory_explorer.py
-    |-- directory_tree.py
-    |-- tree_printer.py
-    `-- tests
-        |-- __init__.py
-        |-- __main__.py
-        |-- test_directory_explorer.py
-        |-- test_directory_tree.py
-        `-- test_tree_printer.py
-
+    |-- requirements.txt
+    |-- test_directory_explorer.py
+    |-- test_directory_tree.py
+    `-- test_tree_printer.py
 ```
 
 ## Install ##
@@ -124,7 +123,7 @@ pylint py_tree
 
 ## Contributing ##
 
-See [guidelines for contributions](CONTRIBUTING.md).
+See [guidelines for contributions](.github/CONTRIBUTING.md).
 
 ## License ##
 
