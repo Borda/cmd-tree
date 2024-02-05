@@ -15,5 +15,5 @@ jobs:
         with:
           python-version: "3.x"
       - run: |
-          pip install -q pylint
-          pylint py_tree
+          pip install -q "ruff>=0.1.9"
+          ruff . --no-fix --statistics --preview

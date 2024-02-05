@@ -14,4 +14,4 @@
 
 """Creates a text-based graphcial representation of file hierarchies."""
 
-from .command_line import main
+from .command_line import main  # noqa: F401
