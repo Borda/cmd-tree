@@ -12,17 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""This module handles the command line for py_tree.
+"""This module handles the command line for fs_tree.
 
 Example:
-    In order to run py_tree, use this command::
+    In order to run fs_tree, use this command::
 
-        $ python -m py_tree
+        $ python -m fs_tree
 """
 
 from argparse import ArgumentParser
-from py_tree.directory_explorer import DirectoryExplorer
-from py_tree.tree_printer import TreePrinter
+from fs_tree.directory_explorer import DirectoryExplorer
+from fs_tree.tree_printer import TreePrinter
 
 
 def command_line_runner():
@@ -57,9 +57,9 @@ def command_line_runner():
 
 def main(start_dir=".", show_hidden=False, depth_limit=10, indentation_width=4,
          output_file=""):
-    """Runs py_tree using the arguments provided.
+    """Runs fs_tree using the arguments provided.
 
-    py_tree will traverse directories using the path provided (current dir if
+    fs_tree will traverse directories using the path provided (current dir if
     none is provided) and print a text-based tree of the result.
 
     Args:

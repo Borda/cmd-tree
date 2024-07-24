@@ -17,13 +17,13 @@
 Example:
     These tests can be run with the command::
 
-        $ python -m py_tree.tests.test_directory_explorer
+        $ python -m fs_tree.tests.test_directory_explorer
 """
 
 import os
 import shutil
 import unittest
-from py_tree.directory_explorer import DirectoryExplorer
+from fs_tree.directory_explorer import DirectoryExplorer
 
 
 class TestDirectoryExplorer(unittest.TestCase):
@@ -105,10 +105,11 @@ class TestDirectoryExplorer(unittest.TestCase):
 
         recursion_level = 0
         for _, files in results:
-            if files:
-                self.assertTrue(self.file_pattern_a % recursion_level in files)
-                self.assertTrue(self.file_pattern_b % recursion_level in files)
-                recursion_level += 1
+            if not files:
+                continue
+            self.assertIn(self.file_pattern_a % recursion_level, files)
+            self.assertIn(self.file_pattern_b % recursion_level, files)
+            recursion_level += 1
 
     def test_explore_finds_all_dirs(self):
         """Test that explore will find all directories."""
@@ -117,10 +118,11 @@ class TestDirectoryExplorer(unittest.TestCase):
 
         recursion_level = 0
         for dirs, _ in results:
-            if dirs:
-                self.assertTrue(self.dir_pattern_a % recursion_level in dirs)
-                self.assertTrue(self.dir_pattern_b % recursion_level in dirs)
-                recursion_level += 1
+            if not dirs:
+                continue
+            self.assertIn(self.dir_pattern_a % recursion_level, dirs)
+            self.assertIn(self.dir_pattern_b % recursion_level, dirs)
+            recursion_level += 1
 
     def test_recursion_limit(self):
         """Test that explore exits once meeting the recursion limit."""
@@ -131,14 +133,15 @@ class TestDirectoryExplorer(unittest.TestCase):
 
         recr_depth = 0
         for dirs, _ in results:
-            if dirs:
-                if recr_depth > recursion_limit:
-                    self.assertFalse(self.dir_pattern_a % recr_depth in dirs)
-                    self.assertFalse(self.dir_pattern_b % recr_depth in dirs)
-                else:
-                    self.assertTrue(self.dir_pattern_a % recr_depth in dirs)
-                    self.assertTrue(self.dir_pattern_b % recr_depth in dirs)
-                recr_depth += 1
+            if not dirs:
+                continue
+            if recr_depth > recursion_limit:
+                self.assertNotIn(self.dir_pattern_a % recr_depth, dirs)
+                self.assertNotIn(self.dir_pattern_b % recr_depth, dirs)
+            else:
+                self.assertIn(self.dir_pattern_a % recr_depth, dirs)
+                self.assertIn(self.dir_pattern_b % recr_depth, dirs)
+            recr_depth += 1
 
     def test_build_tree(self):
         """Test the build_tree method."""

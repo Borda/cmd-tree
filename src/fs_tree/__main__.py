@@ -11,3 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+"""This module is the entry point for fs_tree.
+
+Example:
+    In order to run fs_tree, use this command::
+
+        $ python -m fs_tree
+"""
+
+from .command_line import command_line_runner
+
+
+if __name__ == "__main__":
+    command_line_runner()

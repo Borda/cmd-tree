@@ -1,19 +1,21 @@
-# Py-Tree #
+# CMD-Tree #
+
+**This is continuation/fork of https://github.com/tdeh/py-tree**
 
 [![CI](https://github.com/Borda/cmd-tree/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/Borda/cmd-tree/actions/workflows/test.yml)
-[![codecov](https://codecov.io/gh/Borda/fs-tree/graph/badge.svg?token=HwzDNH77r4)](https://codecov.io/gh/Borda/fs-tree)
+[![codecov](https://codecov.io/gh/Borda/cmd-tree/graph/badge.svg?token=HwzDNH77r4)](https://codecov.io/gh/Borda/cmd-tree)
 
 A command line tool for generating text-based representations of file hierarchies.
 
 ```
-$ py-tree
+$ cmd-tree
 .
 |-- _config.yml
 |-- LICENSE
 |-- MANIFEST.in
 |-- README.md
 |-- setup.py
-|-- py_tree
+|-- fs_tree
 |   |-- __init__.py
 |   |-- __main__.py
 |   |-- command_line.py
@@ -86,14 +88,17 @@ optional arguments:
 ### Python Console ###
 
 To run from an interactive Python session:
+
 ```python
-import py_tree
-py_tree.main()
+
+from src import fs_tree
+
+fs_tree.main()
 ```
 
 To get argument details & descriptions:
 ```python
-help(py_tree.main)
+help(fs_tree.main)
 ```
 
 ## Running Unit Tests ##
@@ -104,7 +109,7 @@ pip install -r tests/requirements.txt
 ```
 and then run the tests with:
 ```bash
-pytest -v tests
+pytest -v tests/
 ```
 
 ## Linting ##
@@ -118,7 +123,7 @@ pip install pylint
 Run on code directory:
 
 ```bash
-pylint py_tree
+pylint src/
 ```
 
 ## Contributing ##

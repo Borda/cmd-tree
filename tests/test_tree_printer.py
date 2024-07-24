@@ -17,13 +17,13 @@
 Example:
     These tests can be run with the command::
 
-        $ python -m py_tree.tests.test_tree_printer
+        $ python -m fs_tree.tests.test_tree_printer
 """
 
 import os
 import unittest
 from mock import MagicMock
-from py_tree.tree_printer import TreePrinter
+from fs_tree.tree_printer import TreePrinter
 
 
 class TestTreePrinter(unittest.TestCase):
