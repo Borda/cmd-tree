@@ -107,8 +107,8 @@ class TestDirectoryExplorer(unittest.TestCase):
         for _, files in results:
             if not files:
                 continue
-            self.assertTrue(self.file_pattern_a % recursion_level in files)
-            self.assertTrue(self.file_pattern_b % recursion_level in files)
+            self.assertIn(self.file_pattern_a % recursion_level, files)
+            self.assertIn(self.file_pattern_b % recursion_level, files)
             recursion_level += 1
 
     def test_explore_finds_all_dirs(self):
@@ -120,8 +120,8 @@ class TestDirectoryExplorer(unittest.TestCase):
         for dirs, _ in results:
             if not dirs:
                 continue
-            self.assertTrue(self.dir_pattern_a % recursion_level in dirs)
-            self.assertTrue(self.dir_pattern_b % recursion_level in dirs)
+            self.assertIn(self.dir_pattern_a % recursion_level, dirs)
+            self.assertIn(self.dir_pattern_b % recursion_level, dirs)
             recursion_level += 1
 
     def test_recursion_limit(self):
@@ -136,11 +136,11 @@ class TestDirectoryExplorer(unittest.TestCase):
             if not dirs:
                 continue
             if recr_depth > recursion_limit:
-                self.assertFalse(self.dir_pattern_a % recr_depth in dirs)
-                self.assertFalse(self.dir_pattern_b % recr_depth in dirs)
+                self.assertNotIn(self.dir_pattern_a % recr_depth, dirs)
+                self.assertNotIn(self.dir_pattern_b % recr_depth, dirs)
             else:
-                self.assertTrue(self.dir_pattern_a % recr_depth in dirs)
-                self.assertTrue(self.dir_pattern_b % recr_depth in dirs)
+                self.assertIn(self.dir_pattern_a % recr_depth, dirs)
+                self.assertIn(self.dir_pattern_b % recr_depth, dirs)
             recr_depth += 1
 
     def test_build_tree(self):
