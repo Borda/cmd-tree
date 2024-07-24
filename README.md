@@ -15,7 +15,7 @@ $ cmd-tree
 |-- MANIFEST.in
 |-- README.md
 |-- setup.py
-|-- py_tree
+|-- fs_tree
 |   |-- __init__.py
 |   |-- __main__.py
 |   |-- command_line.py
@@ -98,7 +98,7 @@ fs_tree.main()
 
 To get argument details & descriptions:
 ```python
-help(py_tree.main)
+help(fs_tree.main)
 ```
 
 ## Running Unit Tests ##
@@ -109,7 +109,7 @@ pip install -r tests/requirements.txt
 ```
 and then run the tests with:
 ```bash
-pytest -v tests
+pytest -v tests/
 ```
 
 ## Linting ##
@@ -123,7 +123,7 @@ pip install pylint
 Run on code directory:
 
 ```bash
-pylint fs_tree
+pylint src/
 ```
 
 ## Contributing ##

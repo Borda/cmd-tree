@@ -21,7 +21,7 @@ Example:
 """
 
 import unittest
-from py_tree.directory_tree import DirectoryTree, DirectoryNode
+from fs_tree.directory_tree import DirectoryTree, DirectoryNode
 
 
 class TestDirectoryNode(unittest.TestCase):

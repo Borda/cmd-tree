@@ -21,8 +21,8 @@ Example:
 """
 
 from argparse import ArgumentParser
-from py_tree.directory_explorer import DirectoryExplorer
-from py_tree.tree_printer import TreePrinter
+from fs_tree.directory_explorer import DirectoryExplorer
+from fs_tree.tree_printer import TreePrinter
 
 
 def command_line_runner():
