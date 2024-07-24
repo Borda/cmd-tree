@@ -17,7 +17,7 @@
 Example:
     These tests can be run with the command::
 
-        $ python -m py_tree.tests.test_tree_printer
+        $ python -m fs_tree.tests.test_tree_printer
 """
 
 import os

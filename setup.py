@@ -14,7 +14,7 @@
 
 from setuptools import setup
 
-setup(name='py-tree',
+setup(name='cmd-tree',
       version='1.0.1',
       description='A command line tool for generating text-based representations of file hierarchies.',
       url='http://github.com/tdeh/py-tree',
@@ -22,8 +22,6 @@ setup(name='py-tree',
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
@@ -36,8 +34,8 @@ setup(name='py-tree',
       author='Taylor DeHaan',
       author_email='tdehaan93@gmail.com',
       license='Apache',
-      packages=['py_tree'],
+      packages=['fs_tree'],
       entry_points={
-          'console_scripts': ['py-tree=py_tree.command_line:command_line_runner'],
+          'console_scripts': ['py-tree=fs_tree.command_line:command_line_runner'],
       },
       zip_safe=False)

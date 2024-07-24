@@ -22,7 +22,7 @@ import sys
 
 
 class TreePrinter(object):
-    """Prints a graphical representation of a DirectoryTree obejct.
+    """Prints a graphical representation of a DirectoryTree object.
 
     This class exposes a print_tree() method which will print a graphical
     representation of the tree.
